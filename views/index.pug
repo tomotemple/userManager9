@@ -1,0 +1,26 @@
+html
+    head
+        title Postgress Manager
+    body
+        h1 Marginally Large User List
+        table 
+            tr
+                th First Name
+                th Last Name
+                th Email
+                th Age
+            each user in users
+                tr
+                    td= user.firstname
+                    td= user.lastname
+                    td= user.email
+                    td= user.age
+                    td
+                        a(href=`/users/${user.userid}`) Edit
+                    td 
+                        a(href=`/delete/${user.userid}`) Delete
+
+        a(href='/ascend') Ascend
+        a(href='/descend') Descend
+        a(href='/search') Search
+        a(href='/create') Add User

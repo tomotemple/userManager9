@@ -1,0 +1,20 @@
+include ./mixin
+
+html
+    head
+        title= 'User Manager'
+    body
+        h1= 'Create a User'
+        p= 'Please fill out your information right here'
+            form(id='newUser', method='POST', action=`/editor/${editUser.userid}`)
+                div
+                    +textInput('firstName', 'First Name: ', editUser.firstname)
+                div
+                    +textInput('lastName', 'Last Name: ', editUser.lastname)
+                div
+                    +textInput('email', 'Email: ', editUser.email)
+                div
+                    +textInput('age', 'Age: ', editUser.age)
+                div
+                    input(type= 'submit', value='Save User')
+//-         I need to wrap this button in a link
